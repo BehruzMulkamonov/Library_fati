@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Book, Discuss, Magazine
+from books.models import Book, Discuss, Magazine, Abstract
 
 
 class BookSerializer(serializers.ModelSerializer):
@@ -18,4 +18,10 @@ class DiscussSerializer(serializers.ModelSerializer):
 class MagazineSerializer(serializers.ModelSerializer):
     class Meta:
         model = Magazine
+        fields = '__all__'
+
+
+class AbstractSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Abstract
         fields = '__all__'
