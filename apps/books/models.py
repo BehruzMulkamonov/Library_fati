@@ -22,6 +22,7 @@ class Language(AbstractBaseModel):
 
 
 class Book(AbstractBaseModel):
+    title = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     scan = models.BooleanField(default=False)
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
@@ -33,18 +34,21 @@ class Book(AbstractBaseModel):
 
 
 class Discuss(AbstractBaseModel):
+    title = models.CharField(max_length=255)
     class Meta:
         verbose_name = 'Muhokama'
         verbose_name_plural = 'Muhokamalar'
 
 
 class Magazine(AbstractBaseModel):
+    title = models.CharField(max_length=255)
     class Meta:
         verbose_name = 'Jurnal'
         verbose_name_plural = 'Jurnallar'
 
 
 class Abstract(AbstractBaseModel):
+    title = models.CharField(max_length=255)
     class Meta:
         verbose_name = 'Avtoreferat'
         verbose_name_plural = 'Avtoreferatlar'

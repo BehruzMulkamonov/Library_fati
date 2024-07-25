@@ -1,6 +1,18 @@
 from django.contrib import admin
 
-from .models import Book, Discuss, Magazine, Abstract
+from .models import Book, Discuss, Magazine, Abstract, Category, Language
+
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_field = ('name',)
+
+
+@admin.register(Language)
+class LangugeAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_field = ('name',)
 
 
 @admin.register(Book)
