@@ -7,6 +7,9 @@ class Category(AbstractBaseModel):
     name = models.CharField(max_length=255)
     objects = models.Manager()
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = 'Kategoriya'
         verbose_name_plural = 'Kategoriyalar'
@@ -15,6 +18,9 @@ class Category(AbstractBaseModel):
 class Language(AbstractBaseModel):
     name = models.CharField(max_length=255)
     objects = models.Manager()
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         verbose_name = 'Til'
@@ -28,6 +34,9 @@ class Book(AbstractBaseModel):
     language = models.ForeignKey(Language, on_delete=models.CASCADE)
     objects = models.Manager()
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'Kitob'
         verbose_name_plural = 'Kitoblar'
@@ -35,6 +44,10 @@ class Book(AbstractBaseModel):
 
 class Discuss(AbstractBaseModel):
     title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'Muhokama'
         verbose_name_plural = 'Muhokamalar'
@@ -42,6 +55,10 @@ class Discuss(AbstractBaseModel):
 
 class Magazine(AbstractBaseModel):
     title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'Jurnal'
         verbose_name_plural = 'Jurnallar'
@@ -49,6 +66,10 @@ class Magazine(AbstractBaseModel):
 
 class Abstract(AbstractBaseModel):
     title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'Avtoreferat'
         verbose_name_plural = 'Avtoreferatlar'
