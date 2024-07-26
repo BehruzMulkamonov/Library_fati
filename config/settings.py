@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'apps.api',
     # frameworks
     'rest_framework',
+    'corsheaders',
     'drf_yasg',
 ]
 AUTH_USER_MODEL = 'users.User'
