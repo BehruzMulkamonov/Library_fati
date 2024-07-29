@@ -44,6 +44,8 @@ class Book(AbstractBaseModel):
 
 class Discuss(AbstractBaseModel):
     title = models.CharField(max_length=255)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    language = models.ForeignKey(Language, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
@@ -55,6 +57,8 @@ class Discuss(AbstractBaseModel):
 
 class Magazine(AbstractBaseModel):
     title = models.CharField(max_length=255)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    language = models.ForeignKey(Language, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
@@ -66,6 +70,8 @@ class Magazine(AbstractBaseModel):
 
 class Abstract(AbstractBaseModel):
     title = models.CharField(max_length=255)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    language = models.ForeignKey(Language, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title

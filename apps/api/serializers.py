@@ -21,18 +21,27 @@ class BookSerializer(serializers.ModelSerializer):
 
 
 class DiscussSerializer(serializers.ModelSerializer):
+    category_name = serializers.CharField(source='category.name', read_only=True)
+    language_name = serializers.CharField(source='language.name', read_only=True)
+
     class Meta:
         model = Discuss
-        fields = '__all__'
+        fields = ('title', 'category_name', 'language_name')
 
 
 class MagazineSerializer(serializers.ModelSerializer):
+    category_name = serializers.CharField(source='category.name', read_only=True)
+    language_name = serializers.CharField(source='language.name', read_only=True)
+
     class Meta:
         model = Magazine
-        fields = '__all__'
+        fields = ('title', 'category_name', 'language_name')
 
 
 class AbstractSerializer(serializers.ModelSerializer):
+    category_name = serializers.CharField(source='category.name', read_only=True)
+    language_name = serializers.CharField(source='language.name', read_only=True)
+
     class Meta:
         model = Abstract
-        fields = '__all__'
+        fields = ('title', 'category_name', 'language_name')
