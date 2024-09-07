@@ -19,21 +19,25 @@ class LangugeAdmin(admin.ModelAdmin):
 class BookAdmin(admin.ModelAdmin):
     list_display = ('title',)
     search_fields = ('title',)
+    list_filter = ('category', 'language',)
 
 
 @admin.register(Discuss)
 class DiscussAdmin(admin.ModelAdmin):
     list_display = ('title',)
     search_fields = ('title',)
+    list_filter = ('category', 'language',)
 
 
 @admin.register(Magazine)
 class MagazineAdmin(admin.ModelAdmin):
     list_display = ('title',)
     search_fields = ('title',)
+    list_filter = ('category', 'language',)
 
 
 @admin.register(Abstract)
 class AbstractAdmin(admin.ModelAdmin):
     list_display = ('title',)
     search_fields = ('title',)
+    list_filter = ('category', 'language',)
